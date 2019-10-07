@@ -60,6 +60,44 @@ nav {
 
 .nav-button {
   cursor: pointer;
+  position: relative;
+}
+
+.nav-button:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+.nav-button:hover::before {
+  transform: translateX(-50%) rotate(45deg) scale(1);
+}
+
+.nav-button::after {
+  content: "Click Me";
+  position: absolute;
+  font-family: roboto, arial, san-serif;
+  top: -200%;
+  left: 50%;
+  transform: translateX(-50%) scale(0, 1);
+  color: white;
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  background-color: #151515;
+  width: 200%;
+  z-index: 5;
+  transition: all 250ms ease-in-out;
+}
+
+.nav-button::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg) scale(0, 1);
+  height: 1rem;
+  width: 1rem;
+  background-color: #151515;
+  z-index: 5;
+  transition: all 250ms ease-in-out;
 }
 
 .nav-closed ul {
